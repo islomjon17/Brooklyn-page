@@ -20,3 +20,12 @@ TYPES = (
     (" Pie Chart", " Pie Chart"), ("Process Diagram",
                                    "Process Diagram"), ("Map", "Map"), ("Multiple Graphs", "Multiple Graphs")
 )
+
+
+class writingtask1(models.Model):
+    title = models.CharField(max_length=300)
+    text = RichTextField(blank=True, null=True)
+    cover = models.ImageField(null=True, blank=True, upload_to='images/')
+    score = models.IntegerField(null=True, blank=True)
+    type_task = models.CharField(
+        max_length=250, choices=TYPES, default="none")
