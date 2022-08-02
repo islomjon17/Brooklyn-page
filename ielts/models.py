@@ -41,3 +41,14 @@ class Task2question(models.Model):
 
     def get_absolute_url(self):
         return reverse('home')
+
+
+class writingtask2(models.Model):
+    question = models.ForeignKey(
+        'Task2question',  default="coding", on_delete=models.CASCADE)
+    title = models.CharField(max_length=300)
+    text = RichTextField(blank=True, null=True)
+    score = models.IntegerField(null=True, blank=True)
+
+    def __str__(self):
+        return (self.title)
