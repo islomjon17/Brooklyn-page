@@ -29,3 +29,15 @@ class writingtask1(models.Model):
     score = models.IntegerField(null=True, blank=True)
     type_task = models.CharField(
         max_length=250, choices=TYPES, default="none")
+
+
+class Task2question(models.Model):
+    title = models.CharField(max_length=255)
+    category = models.ForeignKey(
+        'Category', related_name='category', default="coding", on_delete=models.CASCADE)
+
+    def __str__(self):
+        return (self.title)
+
+    def get_absolute_url(self):
+        return reverse('home')
