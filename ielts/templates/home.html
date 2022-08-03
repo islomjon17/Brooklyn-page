@@ -2,31 +2,14 @@
 
 {% block content %}
 
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
-<h1>Post</h1>
-
-<ul>
-{% for post in object_list %}
-<li> <a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a> 
-   
-    - <a href="{% url 'category' post.category %}">{{ post.category}}</a>
-    - {{ post.author.first_name }} {{ post.author.last_name }} - 
-    {{ post.created_on}}
-    <small>
-        {% if user.is_superuser %}
-        {% if user.id == post.author.id %}
-        - <a href="{% url 'update_post' post.pk %}">(Edit)</a>
-        - <a href="{% url 'delete_post' post.pk %}">(Delete)</a> 
-        {% endif %}
-        {% endif %}}
-    </small>
-    <br/>
-    
-    {{snippet}}
-    </li>
-{% endfor %}
-
-</ul>
+<button type="button" class="btn btn-success">Tas 1</button>
+<button type="button" class="btn btn-success">Task 2</button>
 
 
 {% endblock %}

@@ -9,31 +9,10 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="">March</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Events
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" aria-current="page" href="">Add event</a>
-              {% if user.is_superuser %}
-      
-              <a class="dropdown-item" aria-current="page" href="">Admin Approvel page</a>
-          
-         {% endif %}
-            </div>
-          </li>
-  
+         
   
           
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Venue   
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" aria-current="page" href="">Add venue</a>
-            </div>
-            
-          </li>
+        
          
   
   
@@ -42,7 +21,7 @@
               Writing
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" aria-current="page" href="">Task 1</a>
+              <a class="dropdown-item" aria-current="page" href="{% url 'task1categories' %}">Task 1</a>
               <a class="dropdown-item" aria-current="page" href="">Task 2</a>
             </div>
           </li>

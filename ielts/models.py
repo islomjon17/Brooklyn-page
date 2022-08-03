@@ -16,9 +16,9 @@ class Category(models.Model):
 
 
 TYPES = (
-    ("Bar Chart", "Bar Chart"), ("Line Graph", "Line Graph"), ("Table", "Table"),
-    (" Pie Chart", " Pie Chart"), ("Process Diagram",
-                                   "Process Diagram"), ("Map", "Map"), ("Multiple Graphs", "Multiple Graphs")
+    ("barchart", "Bar Chart"), ("linegraph", "Line Graph"), ("table", "Table"),
+    ("piechart", " Pie Chart"), ("processdiagram",
+                                 "Process Diagram"), ("map", "Map"), ("multiplegraphs", "Multiple Graphs")
 )
 
 
