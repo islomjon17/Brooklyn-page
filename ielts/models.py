@@ -34,7 +34,7 @@ class writingtask1(models.Model):
 class Task2question(models.Model):
     title = models.CharField(max_length=255)
     category = models.ForeignKey(
-        'Category', related_name='category', default="coding", on_delete=models.CASCADE)
+        'Category', related_name='category', default="without any category", on_delete=models.CASCADE)
 
     def __str__(self):
         return (self.title)
