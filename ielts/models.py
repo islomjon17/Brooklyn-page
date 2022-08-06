@@ -31,7 +31,7 @@ class writingtask1(models.Model):
     cover = models.ImageField(null=True, blank=True, upload_to='images/')
     score = models.IntegerField(null=True, blank=True)
     category = models.ForeignKey(
-        'CategoryTask1', related_name='category', default="without any category", on_delete=models.CASCADE)
+        'CategoryTask1', on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return f'{self.category} {self.title}'

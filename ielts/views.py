@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .models import writingtask1
+from .models import writingtask1, CategoryTask1
+from django.views.generic import ListView
 # Create your views here.
 
 
@@ -8,13 +9,16 @@ def home(request):
 
 
 def task1categories(request):
-    list = writingtask1.objects.all()
+    listtask = writingtask1.objects.all()
+    listcat = CategoryTask1.objects.all()
+
     return render(request, 'task1category.html',
-                  {'list': list})
+                  {"listtask": listtask, "listcat": listcat})
 
 
-def task1list(request, task1type):
-    list = writingtask1.objects.filter(type_task=task1type)
+def task1list(request, pk):
+    listtask = writingtask1.objects.filter(
+        pk=pk)
     return render(request, 'task1list.html',
-                  {'list': list}
+                  {"listtask": listtask}
                   )

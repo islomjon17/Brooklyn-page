@@ -10,8 +10,8 @@
 <br/>
 <br/>
 <br/>
-{% for i in list %}
-<a href="#" class="link-primary">{{i.type_task}}</a><br/>
+{% for i in listcat %}
+<a href="{% url 'task1type' i.id %}" class="link-primary">{{i.name}}</a><br/>
 
 {% endfor %}
 {% endblock %}
