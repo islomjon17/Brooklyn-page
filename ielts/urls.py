@@ -1,11 +1,14 @@
 
 from django.urls import path
 from .views import *
+from django.conf import settings
+from django.conf.urls.static import static
+
+
 urlpatterns = [
     path('', home, name='home'),
+    path('task1show/<int:pk>/', task1show, name='task1show'),
+    path('task1list', task1list, name='task1')
 
-    path('task1categories', task1categories, name='task1categories'),
-    path('task1categorieslist/<int:pk>/', task1list, name='task1type'),
 
-
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -8,17 +8,15 @@ def home(request):
     return render(request, 'home.html')
 
 
-def task1categories(request):
-    listtask = writingtask1.objects.all()
-    listcat = CategoryTask1.objects.all()
-
-    return render(request, 'task1category.html',
-                  {"listtask": listtask, "listcat": listcat})
-
-
-def task1list(request, pk):
-    listtask = writingtask1.objects.filter(
-        pk=pk)
+def task1list(request):
+    listtask = writingtask1.objects.all
     return render(request, 'task1list.html',
+                  {"listtask": listtask}
+                  )
+
+
+def task1show(request, pk):
+    listtask = writingtask1.objects.get(pk=pk)
+    return render(request, 'task1show.html',
                   {"listtask": listtask}
                   )

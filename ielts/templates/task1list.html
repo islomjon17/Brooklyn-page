@@ -7,7 +7,14 @@
 <br/>
 
 {% for i in listtask %}
-{{i.title}}
+
+<ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        {{i.title}}
+        <button type="button" class="btn btn-primary"><a class="dropdown-item" aria-current="page" href="{% url 'task1show' i.id %}">View sample</a></button>
+      <span class="badge badge-primary badge-pill">Band score{{i.score}}</span>
+    </li>
+</ul><br/>
 {% endfor %}
 
 {% endblock %}
