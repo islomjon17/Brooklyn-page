@@ -30,4 +30,4 @@ class UpdateTask1View(UpdateView):
     model = writingtask1
     form_class = writingtask1Form
     context_object_name = 'post'
-    template_name = 'task1upadate.html'
+    template_name = 'task1update.html'
