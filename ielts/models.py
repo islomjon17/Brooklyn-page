@@ -36,6 +36,9 @@ class writingtask1(models.Model):
     def __str__(self):
         return f'{self.category} {self.title}'
 
+    def get_absolute_url(self):
+        return reverse('home')
+
 
 class Task2question(models.Model):
     title = models.CharField(max_length=255)
