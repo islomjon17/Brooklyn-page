@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from .models import writingtask1, CategoryTask1
 from django.views.generic import ListView
 from .forms import writingtask1Form
-from django.views.generic import UpdateView, DeleteView
+from django.views.generic import UpdateView, DeleteView, CreateView
 from django.urls import reverse_lazy
 # Create your views here.
 
@@ -37,5 +37,12 @@ class UpdateTask1View(UpdateView):
 
 class DeleteTask1View(DeleteView):
     model = writingtask1
-    template_name = 'delete_post.html'
+    template_name = 'delete_task1.html'
     success_url = reverse_lazy('home')
+
+
+class AddTaskView(CreateView):
+    model = writingtask1
+    form_class = writingtask1Form
+    template_name = 'add_task1.html'
+    ordering = ['created_ons']
