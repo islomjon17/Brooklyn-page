@@ -13,7 +13,8 @@
         {{i.title}}
         <button type="button" class="btn btn-primary"><a class="dropdown-item" aria-current="page" href="{% url 'task1show' i.id %}">View sample</a></button>
         <button type="button" class="btn btn-primary"><a class="dropdown-item" aria-current="page" href="{% url 'task1update' i.id %}">Update task</a></button>
-      <span class="badge badge-primary badge-pill">Band score{{i.score}}</span>
+        <button type="button" class="btn btn-primary"><a class="dropdown-item" aria-current="page" href="{% url 'tasl1delete' i.id %}">Delete task</a></button>
+        <span class="badge badge-primary badge-pill">Band score{{i.score}}</span>
     </li>
 </ul><br/>
 {% endfor %}
