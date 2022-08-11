@@ -44,5 +44,4 @@ class DeleteTask1View(DeleteView):
 class AddTaskView(CreateView):
     model = writingtask1
     form_class = writingtask1Form
-    template_name = 'add_task1.html'
-    ordering = ['created_ons']
+    template_name = 'addtask1.html'
