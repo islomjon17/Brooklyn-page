@@ -13,7 +13,7 @@ urlpatterns = [
          UpdateTask1View.as_view(), name='task1update'),
     path('tasl1delete/<int:pk>/',
          DeleteTask1View.as_view(), name='tasl1delete'),
-    path('addtask1/<int:pk>/',
+    path('addtask1',
          AddTaskView.as_view(), name='addtask1')
 
 
