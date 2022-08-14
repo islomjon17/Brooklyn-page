@@ -77,3 +77,10 @@ def Task2list(request):
                    "nums": nums,
                    }
                   )
+
+
+def Task2show(request, task1_id):
+    listtask = writingtask2.objects.get(pk=task1_id)
+    return render(request, 'tasks/task2/task2show.html',
+                  {"listtask": listtask}
+                  )

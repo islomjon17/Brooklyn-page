@@ -17,6 +17,7 @@ urlpatterns = [
          AddTaskView.as_view(), name='addtask1'),
     # task 2 section
     path('task2list', Task2list, name='task2list'),
+    path('task2show/<int:task1_id>/', Task2show, name='task2show'),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
