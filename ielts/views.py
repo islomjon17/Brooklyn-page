@@ -66,7 +66,7 @@ def Task2list(request):
     listtask = writingtask2.objects.all
 
     # Set up pagination
-    p = Paginator(writingtask1.objects.all(), 2)
+    p = Paginator(writingtask2.objects.all(), 1)
     page = request.GET.get('page')
     tasks = p.get_page(page)
     nums = "a" * tasks.paginator.num_pages
@@ -91,3 +91,9 @@ class UpdateTask2View(UpdateView):
     form_class = writingtask2Form
     context_object_name = 'post'
     template_name = 'tasks/task2/task2update.html'
+
+
+class DeleteTask2View(DeleteView):
+    model = writingtask2
+    template_name = 'tasks/task2/delete_task2.html'
+    success_url = reverse_lazy('home')

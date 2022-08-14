@@ -20,5 +20,8 @@ urlpatterns = [
     path('task2show/<int:task1_id>/', Task2show, name='task2show'),
     path('task2update/<int:pk>/',
          UpdateTask2View.as_view(), name='task2update'),
+    path('task2delete/<int:pk>/',
+         DeleteTask2View.as_view(), name='task2delete'),
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
