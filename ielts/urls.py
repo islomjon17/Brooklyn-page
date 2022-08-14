@@ -14,9 +14,9 @@ urlpatterns = [
     path('tasl1delete/<int:pk>/',
          DeleteTask1View.as_view(), name='tasl1delete'),
     path('addtask1',
-         AddTaskView.as_view(), name='addtask1')
-
-
+         AddTaskView.as_view(), name='addtask1'),
+    # task 2 section
+    path('task2list', Task2list, name='task2list'),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

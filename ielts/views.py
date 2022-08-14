@@ -1,6 +1,6 @@
 from re import L
 from django.shortcuts import render, redirect
-from .models import writingtask1, CategoryTask1
+from .models import writingtask1, writingtask2, CategoryTask1
 from django.views.generic import ListView
 from .forms import writingtask1Form
 from django.views.generic import UpdateView, DeleteView, CreateView
@@ -57,3 +57,23 @@ class AddTaskView(CreateView):
     model = writingtask1
     form_class = writingtask1Form
     template_name = 'tasks/task1/addtask1.html'
+
+
+# Task 2 section
+
+
+def Task2list(request):
+    listtask = writingtask2.objects.all
+
+    # Set up pagination
+    p = Paginator(writingtask1.objects.all(), 2)
+    page = request.GET.get('page')
+    tasks = p.get_page(page)
+    nums = "a" * tasks.paginator.num_pages
+
+    return render(request, 'tasks/task2/task2list.html',
+                  {"listtask": listtask,
+                   "tasks": tasks,
+                   "nums": nums,
+                   }
+                  )
