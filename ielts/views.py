@@ -25,7 +25,7 @@ def Task1list(request):
     tasks = p.get_page(page)
     nums = "a" * tasks.paginator.num_pages
 
-    return render(request, 'task1list.html',
+    return render(request, 'tasks/task1/task1list.html',
                   {"listtask": listtask,
                    "tasks": tasks,
                    "nums": nums,
@@ -35,7 +35,7 @@ def Task1list(request):
 
 def Task1show(request, task1_id):
     listtask = writingtask1.objects.get(pk=task1_id)
-    return render(request, 'task1show.html',
+    return render(request, 'tasks/task1/task1show.html',
                   {"listtask": listtask}
                   )
 
@@ -44,16 +44,16 @@ class UpdateTask1View(UpdateView):
     model = writingtask1
     form_class = writingtask1Form
     context_object_name = 'post'
-    template_name = 'task1update.html'
+    template_name = 'tasks/task1/task1update.html'
 
 
 class DeleteTask1View(DeleteView):
     model = writingtask1
-    template_name = 'delete_task1.html'
+    template_name = 'tasks/task1/delete_task1.html'
     success_url = reverse_lazy('home')
 
 
 class AddTaskView(CreateView):
     model = writingtask1
     form_class = writingtask1Form
-    template_name = 'addtask1.html'
+    template_name = 'tasks/task1/addtask1.html'
