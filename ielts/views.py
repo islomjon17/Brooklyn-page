@@ -5,6 +5,8 @@ from django.views.generic import ListView
 from .forms import writingtask1Form
 from django.views.generic import UpdateView, DeleteView, CreateView
 from django.urls import reverse_lazy
+# import pagnations stuff for odf downloader...
+from django.core.paginator import Paginator
 # Create your views here.
 
 
@@ -16,8 +18,18 @@ def Home(request):
 
 def Task1list(request):
     listtask = writingtask1.objects.all
+
+    # Set up pagination
+    p = Paginator(writingtask1.objects.all(), 1)
+    page = request.GET.get('page')
+    tasks = p.get_page(page)
+    nums = "a" * tasks.paginator.num_pages
+
     return render(request, 'task1list.html',
-                  {"listtask": listtask}
+                  {"listtask": listtask,
+                   "tasks": tasks,
+                   "nums": nums,
+                   }
                   )
 
 
