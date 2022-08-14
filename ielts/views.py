@@ -20,7 +20,7 @@ def Task1list(request):
     listtask = writingtask1.objects.all
 
     # Set up pagination
-    p = Paginator(writingtask1.objects.all(), 1)
+    p = Paginator(writingtask1.objects.all(), 2)
     page = request.GET.get('page')
     tasks = p.get_page(page)
     nums = "a" * tasks.paginator.num_pages
