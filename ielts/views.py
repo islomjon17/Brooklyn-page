@@ -2,7 +2,7 @@ from re import L
 from django.shortcuts import render, redirect
 from .models import writingtask1, writingtask2, CategoryTask1
 from django.views.generic import ListView
-from .forms import writingtask1Form
+from .forms import writingtask1Form, writingtask2Form
 from django.views.generic import UpdateView, DeleteView, CreateView
 from django.urls import reverse_lazy
 # import pagnations stuff for odf downloader...
@@ -84,3 +84,10 @@ def Task2show(request, task1_id):
     return render(request, 'tasks/task2/task2show.html',
                   {"listtask": listtask}
                   )
+
+
+class UpdateTask2View(UpdateView):
+    model = writingtask2
+    form_class = writingtask2Form
+    context_object_name = 'post'
+    template_name = 'tasks/task2/task2update.html'
