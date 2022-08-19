@@ -66,3 +66,5 @@ class writingtask2(models.Model):
         return reverse('home')
 
 
+class speakingpart1(models.Model):
+    title = models.CharField(max_length=300)
