@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+<div class="card">
+    <img class="card-img-top" src="{{ listtask.cover.url }}" alt="Card image cap">
+    <div class="card-header">
+        {{listtask.category}} | Band score {{listtask.score}}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{listtask.title}}</h5>
+      <p class="card-text">{{listtask.text|safe}}</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+  <br/>
+  <br/>
+  <br/>
+  
+{% endblock %}
