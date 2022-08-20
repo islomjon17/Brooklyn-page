@@ -66,5 +66,24 @@ class writingtask2(models.Model):
         return reverse('home')
 
 
+class speakingtopic(models.Model):
+    name = models.num(max_length=255)
+
+    def __str__(self):
+        return (self.name)
+
+    def get_absolute_url(self):
+        return reverse('home')
+    
+    
+TOPIC_CHOICES =(
+    ("1", "One"),
+    ("2", "Two"),
+    ("3", "Three"),
+)
+
+###########part 1 section
+class speakingpart1question(models.Model):
+    title = models.TextField()
 class speakingpart1(models.Model):
-    title = models.CharField(max_length=300)
+    title = models.TextField()
