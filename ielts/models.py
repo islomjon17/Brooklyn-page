@@ -84,6 +84,31 @@ TOPIC_CHOICES =(
 
 ###########part 1 section
 class speakingpart1question(models.Model):
+    partsec = models.CharField(max_length=1, choices=TOPIC_CHOICES)
     title = models.TextField()
 class speakingpart1(models.Model):
     title = models.TextField()
+    partsec = models.CharField(max_length=1, choices=TOPIC_CHOICES)
+    
+    
+    
+###########part 2 section
+
+class speakingpart2questions(models.Model):
+    title = models.TextField()
+    partsec = models.CharField(max_length=1, choices=TOPIC_CHOICES)
+class speakingpart2(models.Model):
+    title = models.TextField()
+    partsec = models.CharField(max_length=1, choices=TOPIC_CHOICES)
+    
+
+
+
+###########part 3 section
+
+class speakingpart3questions(models.Model):
+    title = models.TextField()
+    partsec = models.CharField(max_length=1, choices=TOPIC_CHOICES)
+class speakingpart3(models.Model):
+    title = models.TextField()
+    partsec = models.CharField(max_length=1, choices=TOPIC_CHOICES)
