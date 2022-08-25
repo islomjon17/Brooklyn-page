@@ -67,7 +67,7 @@ class writingtask2(models.Model):
 
 
 class speakingtopic(models.Model):
-    name = models.num(max_length=255)
+    name = models.CharField(max_length=255)
 
     def __str__(self):
         return (self.name)
@@ -82,33 +82,9 @@ TOPIC_CHOICES =(
     ("3", "Three"),
 )
 
-###########part 1 section
-class speakingpart1question(models.Model):
-    partsec = models.CharField(max_length=1, choices=TOPIC_CHOICES)
-    title = models.TextField()
+
 class speakingpart1(models.Model):
     title = models.TextField()
     partsec = models.CharField(max_length=1, choices=TOPIC_CHOICES)
     
     
-    
-###########part 2 section
-
-class speakingpart2questions(models.Model):
-    title = models.TextField()
-    partsec = models.CharField(max_length=1, choices=TOPIC_CHOICES)
-class speakingpart2(models.Model):
-    title = models.TextField()
-    partsec = models.CharField(max_length=1, choices=TOPIC_CHOICES)
-    
-
-
-
-###########part 3 section
-
-class speakingpart3questions(models.Model):
-    title = models.TextField()
-    partsec = models.CharField(max_length=1, choices=TOPIC_CHOICES)
-class speakingpart3(models.Model):
-    title = models.TextField()
-    partsec = models.CharField(max_length=1, choices=TOPIC_CHOICES)
