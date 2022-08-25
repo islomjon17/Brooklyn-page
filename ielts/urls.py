@@ -29,6 +29,7 @@ urlpatterns = [
 
      path('speaking/', Speaking, name='speaking' ),
      path('speakingpart1/', SpeakingPart1Topic, name='speakingpart1'),
+     path('speakingpart2/', SpeakingPart2Questions, name='speakingpart2'),
 
 
 

@@ -1,6 +1,6 @@
 from re import L
 from django.shortcuts import render, redirect
-from .models import writingtask1, writingtask2, CategoryTask1, speakingpart1
+from .models import writingtask1, writingtask2, CategoryTask1, speakingpart1, SpeakingPart2
 from django.views.generic import ListView
 from .forms import writingtask1Form, writingtask2Form
 from django.views.generic import UpdateView, DeleteView, CreateView
@@ -124,6 +124,23 @@ def SpeakingPart1Topic(request):
     nums = "a" * tasks.paginator.num_pages
 
     return render(request, 'speaking/part1/part1topiclist.html',
+                  {"listtask": listtask,
+                   "tasks": tasks,
+                   "nums": nums,
+                   }
+                  )
+    
+    
+def SpeakingPart2Questions(request):
+    listtask = SpeakingPart2.objects.all
+
+    # Set up pagination
+    p = Paginator(SpeakingPart2.objects.all(), 2)
+    page = request.GET.get('page')
+    tasks = p.get_page(page)
+    nums = "a" * tasks.paginator.num_pages
+
+    return render(request, 'speaking/part2/part2questionslist.html',
                   {"listtask": listtask,
                    "tasks": tasks,
                    "nums": nums,
