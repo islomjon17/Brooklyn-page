@@ -25,4 +25,8 @@ urlpatterns = [
     path('addtask2',
          AddTask2View.as_view(), name='addtask2'),
 
+##############speaking urls
+
+     path('speaking/', Speaking, name='speaking' )
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

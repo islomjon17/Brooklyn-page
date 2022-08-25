@@ -103,3 +103,12 @@ class AddTask2View(CreateView):
     model = writingtask2
     form_class = writingtask2Form
     template_name = 'tasks/task2/addtask2.html'
+
+
+""" 
+Speaking section
+"""
+
+def Speaking(request):
+    return render(request, 'speaking/speaking.html',
+                  )
