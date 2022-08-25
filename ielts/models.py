@@ -172,5 +172,4 @@ class speakingpart3(models.Model):
     answer8 = models.TextField(blank=True)
  
  
-    def __str__(self) -> str:
-        return self.topic    
+    
