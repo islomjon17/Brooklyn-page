@@ -120,5 +120,12 @@ class speakingpart1(models.Model):
     answer8 = models.TextField(blank=True)
     
     
+    
+class SpeakingPart2(models.Model):
+    question = models.CharField(max_length=255)
+    text = RichTextField(blank=True, null=True)
+
+    
+    
 
     
