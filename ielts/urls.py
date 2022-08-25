@@ -27,6 +27,9 @@ urlpatterns = [
 
 ##############speaking urls
 
-     path('speaking/', Speaking, name='speaking' )
+     path('speaking/', Speaking, name='speaking' ),
+     path('speakingpart1/', SpeakingPart1Topic, name='speakingpart1'),
+
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
