@@ -81,10 +81,48 @@ TOPIC_CHOICES =(
     ("2", "Two"),
     ("3", "Three"),
 )
+class SpeakingPartOneTopic(models.Model):
+    title = models.CharField(max_length=255)
+
+    def __str__(self):
+        return (self.title)
+
+    def get_absolute_url(self):
+        return reverse('home')
 
 
 class speakingpart1(models.Model):
-    title = models.TextField()
-    partsec = models.CharField(max_length=1, choices=TOPIC_CHOICES)
+    topic = models.ForeignKey(
+        'SpeakingPartOneTopic',  default="unnamed", on_delete=models.CASCADE)
+    
+    question1 = models.CharField(max_length=1, choices=TOPIC_CHOICES)
+    answer1 = models.TextField()
+    
+    question2 = models.CharField(max_length=1, choices=TOPIC_CHOICES, null=True)
+    answer2 = models.TextField()
+    
+    question3 = models.CharField(max_length=1, choices=TOPIC_CHOICES, null=True)
+    answer3 = models.TextField()
+    
+    question4 = models.CharField(max_length=1, choices=TOPIC_CHOICES, null=True)
+    answer4 = models.TextField()
+    
+    question5 = models.CharField(max_length=1, choices=TOPIC_CHOICES, null=True)
+    answer5 = models.TextField()
+    
+    question6 = models.CharField(max_length=1, choices=TOPIC_CHOICES, null=True)
+    answer6 = models.TextField()
+    
+    question7 = models.CharField(max_length=1, choices=TOPIC_CHOICES, null=True)
+    answer7 = models.TextField()
+    
+    question8 = models.CharField(max_length=1, choices=TOPIC_CHOICES, null=True)
+    answer8 = models.TextField()
+    
+    question9 = models.CharField(max_length=1, choices=TOPIC_CHOICES, null=True)
+    answer9 = models.TextField()
+    
+    question10 = models.CharField(max_length=1, choices=TOPIC_CHOICES, null=True)
+    answer10 = models.TextField()
     
     
