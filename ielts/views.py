@@ -113,7 +113,7 @@ def Speaking(request):
     return render(request, 'speaking/speaking.html',
                   )
 
-
+##########speaking part 1
 def SpeakingPart1Topic(request):
     listtask = speakingpart1.objects.all
 
@@ -129,6 +129,15 @@ def SpeakingPart1Topic(request):
                    "nums": nums,
                    }
                   )
+    
+    
+def part1sample(request, id ):
+    part1 = speakingpart1.objects.get(id=id)
+    return render(request, 'speaking/part1/sample.html', {"part1": part1,})
+    
+    
+    
+
     
     
 def SpeakingPart2Questions(request):
@@ -164,3 +173,5 @@ def SpeakingPart3Topic(request):
                    "nums": nums,
                    }
                   )
+    
+    
