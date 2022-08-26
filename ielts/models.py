@@ -4,7 +4,7 @@ from django.urls import reverse
 from ckeditor.fields import RichTextField
 # Create your models here.
 
-
+### Categories of tasks
 class CategoryTask2(models.Model):
     name = models.CharField(max_length=255)
 
@@ -24,8 +24,8 @@ class CategoryTask1(models.Model):
     def get_absolute_url(self):
         return reverse('home')
 
-
-class writingtask1(models.Model):
+##### Task2 and Task1 models
+class WritingTaskOne(models.Model):
     title = models.CharField(max_length=300)
     text = RichTextField(blank=True, null=True)
     cover = models.ImageField(null=True, blank=True, upload_to='images/')
@@ -40,7 +40,7 @@ class writingtask1(models.Model):
         return reverse('home')
 
 
-class Task2question(models.Model):
+class TaskTwoQuestion(models.Model):
     title = models.CharField(max_length=255)
     category = models.ForeignKey(
         'CategoryTask2', related_name='category', default="without any category", on_delete=models.CASCADE)
@@ -52,7 +52,7 @@ class Task2question(models.Model):
         return reverse('home')
 
 
-class writingtask2(models.Model):
+class WritingTaskTwo(models.Model):
     question = models.ForeignKey(
         'Task2question',  default="coding", on_delete=models.CASCADE)
     title = models.CharField(max_length=300)
@@ -66,7 +66,7 @@ class writingtask2(models.Model):
         return reverse('home')
 
 
-class speakingtopic(models.Model):
+class SpeakingTopics(models.Model):
     name = models.CharField(max_length=255)
 
     def __str__(self):
@@ -91,7 +91,7 @@ class SpeakingPartOneTopic(models.Model):
         return reverse('home')
 
 
-class speakingpart1(models.Model):
+class SpeakingPartOne(models.Model):
     topic = models.ForeignKey(
         'SpeakingPartOneTopic',  default="unnamed", on_delete=models.CASCADE)
     text = RichTextField(blank=True, null=True)
@@ -114,7 +114,7 @@ class SpeakingPartThreeTopic(models.Model):
         return reverse('home')
 
 
-class speakingpart3(models.Model):
+class SpeakingPartThree(models.Model):
     topic = models.ForeignKey(
         'SpeakingPartThreeTopic',  default="unnamed", on_delete=models.CASCADE)
     

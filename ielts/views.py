@@ -48,13 +48,13 @@ class UpdateTask1View(UpdateView):
 
 
 class DeleteTask1View(DeleteView):
-    model = writingtask1
+    model = WritingTaskTwo
     template_name = 'tasks/task1/delete_task1.html'
     success_url = reverse_lazy('home')
 
 
 class AddTaskView(CreateView):
-    model = writingtask1
+    model = WritingTaskTwo
     form_class = writingtask1Form
     template_name = 'tasks/task1/addtask1.html'
 
@@ -63,10 +63,10 @@ class AddTaskView(CreateView):
 
 
 def Task2list(request):
-    listtask = writingtask2.objects.all
+    listtask = WritingTaskTwo.objects.all
 
     # Set up pagination
-    p = Paginator(writingtask2.objects.all(), 2)
+    p = Paginator(WritingTaskTwo.objects.all(), 2)
     page = request.GET.get('page')
     tasks = p.get_page(page)
     nums = "a" * tasks.paginator.num_pages
@@ -80,27 +80,27 @@ def Task2list(request):
 
 
 def Task2show(request, task1_id):
-    listtask = writingtask2.objects.get(pk=task1_id)
+    listtask = WritingTaskTwo.objects.get(pk=task1_id)
     return render(request, 'tasks/task2/task2show.html',
                   {"listtask": listtask}
                   )
 
 
 class UpdateTask2View(UpdateView):
-    model = writingtask2
+    model = WritingTaskTwo
     form_class = writingtask2Form
     context_object_name = 'post'
     template_name = 'tasks/task2/task2update.html'
 
 
 class DeleteTask2View(DeleteView):
-    model = writingtask2
+    model = WritingTaskTwo
     template_name = 'tasks/task2/delete_task2.html'
     success_url = reverse_lazy('home')
 
 
 class AddTask2View(CreateView):
-    model = writingtask2
+    model = WritingTaskTwo
     form_class = writingtask2Form
     template_name = 'tasks/task2/addtask2.html'
 
@@ -115,10 +115,10 @@ def Speaking(request):
 
 ##########speaking part 1
 def SpeakingPart1Topic(request):
-    listtask = speakingpart1.objects.all
+    listtask = SpeakingPartOne.objects.all
 
     # Set up pagination
-    p = Paginator(speakingpart1.objects.all(), 2)
+    p = Paginator(SpeakingPartOne.objects.all(), 2)
     page = request.GET.get('page')
     tasks = p.get_page(page)
     nums = "a" * tasks.paginator.num_pages
@@ -132,7 +132,7 @@ def SpeakingPart1Topic(request):
     
     
 def part1sample(request, id ):
-    part1 = speakingpart1.objects.get(id=id)
+    part1 = SpeakingPartOne.objects.get(id=id)
     return render(request, 'speaking/part1/sample.html', {"part1": part1,})
     
     
@@ -159,10 +159,10 @@ def SpeakingPart2Questions(request):
     
     
 def SpeakingPart3Topic(request):
-    listtask = speakingpart3.objects.all
+    listtask = SpeakingPartThree.objects.all
 
     # Set up pagination
-    p = Paginator(speakingpart3.objects.all(), 2)
+    p = Paginator(SpeakingPartThree.objects.all(), 2)
     page = request.GET.get('page')
     tasks = p.get_page(page)
     nums = "a" * tasks.paginator.num_pages
