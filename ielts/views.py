@@ -158,8 +158,8 @@ def SpeakingPart2Questions(request):
     
     
 def part2sample(request, id ):
-    part1 = SpeakingPart2.objects.get(id=id)
-    return render(request, 'speaking/part2/sample.html', {"part1": part1,})
+    part2 = SpeakingPart2.objects.get(id=id)
+    return render(request, 'speaking/part2/sample.html', {"part2": part2,})
     
     
     
@@ -181,3 +181,9 @@ def SpeakingPart3Topic(request):
                   )
     
     
+    
+def part3sample(request, id ):
+    part3 = SpeakingPartThree.objects.get(id=id)
+    return render(request, 'speaking/part3/sample.html', {"part3": part3,})
+    
+  
