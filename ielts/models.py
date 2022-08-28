@@ -118,29 +118,8 @@ class SpeakingPartThree(models.Model):
     topic = models.ForeignKey(
         'SpeakingPartThreeTopic',  default="unnamed", on_delete=models.CASCADE)
     
-    question1 = models.CharField(max_length=255)
-    answer1 = models.TextField()
+    text = RichTextField(blank=True, null=True)
     
-    question2 = models.CharField(max_length=255, blank=True)
-    answer2 = models.TextField(blank=True)
-    
-    question3 = models.CharField(max_length=255, blank=True)
-    answer3 = models.TextField(blank=True)
-    
-    question4 = models.CharField(max_length=255, blank=True)
-    answer4 = models.TextField(blank=True)
-    
-    question5 = models.CharField(max_length=255, blank=True)
-    answer5 = models.TextField(blank=True)
-    
-    question6 = models.CharField(max_length=255, blank=True)
-    answer6 = models.TextField(blank=True)
-    
-    question7 = models.CharField(max_length=255, blank=True)
-    answer7 = models.TextField(blank=True)
-    
-    question8 = models.CharField(max_length=255, blank=True)
-    answer8 = models.TextField(blank=True)
  
  
     
