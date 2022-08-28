@@ -7,7 +7,7 @@ admin.site.register(CategoryTask1)
 
 admin.site.register(WritingTaskOne)
 
-admin.site.register(TaskTwoQuestion)
+admin.site.register(Task2question)
 
 admin.site.register(WritingTaskTwo)
 
@@ -20,6 +20,7 @@ admin.site.register(SpeakingPartOne)
 admin.site.register(SpeakingPart2)
 
 admin.site.register(SpeakingPartThreeTopic)
+
 admin.site.register(SpeakingPartThree)
 
 

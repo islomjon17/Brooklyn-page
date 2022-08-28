@@ -32,6 +32,7 @@ urlpatterns = [
      path('speakingpart2/', SpeakingPart2Questions, name='speakingpart2'),
      path('speakingpart3/', SpeakingPart3Topic, name='speakingpart3'),
      path('speakingpart1show/<int:id>/', part1sample, name='speakingpart1show'),
+     path('speakingpart2show/<int:id>/', part2sample, name='speakingpart2show'),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

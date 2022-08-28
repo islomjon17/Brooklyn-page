@@ -17,10 +17,10 @@ def Home(request):
 
 
 def Task1list(request):
-    listtask = writingtask1.objects.all
+    listtask = WritingTaskOne.objects.all
 
     # Set up pagination
-    p = Paginator(writingtask1.objects.all(), 2)
+    p = Paginator(WritingTaskOne.objects.all(), 2)
     page = request.GET.get('page')
     tasks = p.get_page(page)
     nums = "a" * tasks.paginator.num_pages
@@ -34,14 +34,14 @@ def Task1list(request):
 
 
 def Task1show(request, task1_id):
-    listtask = writingtask1.objects.get(pk=task1_id)
+    listtask = WritingTaskOne.objects.get(pk=task1_id)
     return render(request, 'tasks/task1/task1show.html',
                   {"listtask": listtask}
                   )
 
 
 class UpdateTask1View(UpdateView):
-    model = writingtask1
+    model = WritingTaskOne
     form_class = writingtask1Form
     context_object_name = 'post'
     template_name = 'tasks/task1/task1update.html'
@@ -155,6 +155,12 @@ def SpeakingPart2Questions(request):
                    "nums": nums,
                    }
                   )
+    
+    
+def part2sample(request, id ):
+    part1 = SpeakingPart2.objects.get(id=id)
+    return render(request, 'speaking/part2/sample.html', {"part1": part1,})
+    
     
     
     

@@ -40,7 +40,7 @@ class WritingTaskOne(models.Model):
         return reverse('home')
 
 
-class TaskTwoQuestion(models.Model):
+class Task2question(models.Model):
     title = models.CharField(max_length=255)
     category = models.ForeignKey(
         'CategoryTask2', related_name='category', default="without any category", on_delete=models.CASCADE)

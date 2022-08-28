@@ -11,7 +11,7 @@
 <ul class="list-group">
     <li class="list-group-item d-flex justify-content-between align-items-center">
         {{i.question}}
-       <div class="container"> <button type="button" class="btn btn-primary"><a class="dropdown-item" aria-current="page" href="#">View sample</a></button>
+       <div class="container"> <button type="button" class="btn btn-primary"><a class="dropdown-item" aria-current="page" href="{% url 'speakingpart2show' i.id %}">View sample</a></button>
         <button type="button" class="btn btn-primary"><a class="dropdown-item" aria-current="page" href="#">Update task</a></button>
         <button type="button" class="btn btn-primary"><a class="dropdown-item" aria-current="page" href="#">Delete task</a></button>
     </div>
