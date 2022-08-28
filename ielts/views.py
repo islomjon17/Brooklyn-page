@@ -2,7 +2,7 @@ from re import L
 from django.shortcuts import render, redirect
 from .models import *
 from django.views.generic import ListView
-from .forms import writingtask1Form, writingtask2Form, SpeakingPart1form
+from .forms import writingtask1Form, writingtask2Form, SpeakingPart1form, SpeakingPart2form
 from django.views.generic import UpdateView, DeleteView, CreateView
 from django.urls import reverse_lazy
 # import pagnations stuff for odf downloader...
@@ -163,11 +163,22 @@ def SpeakingPart2Questions(request):
                    }
                   )
     
-    
+
+
 def part2sample(request, id ):
     part2 = SpeakingPart2.objects.get(id=id)
     return render(request, 'speaking/part2/sample.html', {"part2": part2,})
-    
+  
+  
+  
+class UpdateSpeakingPart2View(UpdateView):
+    model = SpeakingPart2
+    form_class = SpeakingPart2form
+    context_object_name = 'post'
+    template_name = 'speaking/part2/updatespeaking.html'
+
+
+  
     
 # part 3 section  
     
@@ -193,4 +204,12 @@ def part3sample(request, id ):
     part3 = SpeakingPartThree.objects.get(id=id)
     return render(request, 'speaking/part3/sample.html', {"part3": part3,})
     
+    
+    
+# class UpdateSpeakingPart1View(UpdateView):
+#     model = SpeakingPartOne
+#     form_class = SpeakingPart1form
+#     context_object_name = 'post'
+#     template_name = 'speaking/part1/updatespeaking.html'
+
   

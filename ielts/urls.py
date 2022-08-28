@@ -37,5 +37,7 @@ urlpatterns = [
      #update and edit section
      path('speakingpartupdate/<int:pk>/',
          UpdateSpeakingPart1View.as_view(), name='speakingpartupdate'),
+     path('speakingpart2update/<int:pk>/',
+         UpdateSpeakingPart2View.as_view(), name='speakingpart2update'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
