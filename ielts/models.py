@@ -96,12 +96,22 @@ class SpeakingPartOne(models.Model):
         'SpeakingPartOneTopic',  default="unnamed", on_delete=models.CASCADE)
     text = RichTextField(blank=True, null=True)
     
+    def get_absolute_url(self):
+    
+        return reverse('home')
+    
 class SpeakingPart2(models.Model):
     question = models.CharField(max_length=255)
     text = RichTextField(blank=True, null=True)
 
     def __str__(self) -> str:
-        return self.question    
+        return self.question 
+    
+    
+    def get_absolute_url(self):
+        return reverse('home')
+    
+       
     
     
 class SpeakingPartThreeTopic(models.Model):
@@ -119,6 +129,9 @@ class SpeakingPartThree(models.Model):
         'SpeakingPartThreeTopic',  default="unnamed", on_delete=models.CASCADE)
     
     text = RichTextField(blank=True, null=True)
+    
+    def get_absolute_url(self):
+        return reverse('home')
     
  
  

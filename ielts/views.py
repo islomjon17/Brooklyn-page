@@ -2,7 +2,7 @@ from re import L
 from django.shortcuts import render, redirect
 from .models import *
 from django.views.generic import ListView
-from .forms import writingtask1Form, writingtask2Form
+from .forms import writingtask1Form, writingtask2Form, SpeakingPart1form
 from django.views.generic import UpdateView, DeleteView, CreateView
 from django.urls import reverse_lazy
 # import pagnations stuff for odf downloader...
@@ -137,11 +137,11 @@ def part1sample(request, id ):
     
     
     
-# class UpdateTask1View(UpdateView):
-#     model = WritingTaskOne
-#     form_class = writingtask1Form
-#     context_object_name = 'post'
-#     template_name = 'tasks/task1/task1update.html'
+class UpdateSpeakingPart1View(UpdateView):
+    model = SpeakingPartOne
+    form_class = SpeakingPart1form
+    context_object_name = 'post'
+    template_name = 'speaking/part1/updatespeaking.html'
 
     
 

@@ -13,7 +13,7 @@
         {{i.topic.title}}
        <div class="container"> 
         <button type="button" class="btn btn-primary"><a class="dropdown-item" aria-current="page" href="{% url 'speakingpart1show' i.id %}">View sample</a></button>
-        <button type="button" class="btn btn-primary"><a class="dropdown-item" aria-current="page" href="#">Update task</a></button>
+        <button type="button" class="btn btn-primary"><a class="dropdown-item" aria-current="page" href="{% url 'speakingpartupdate' i.id %}">Update task</a></button>
         <button type="button" class="btn btn-primary"><a class="dropdown-item" aria-current="page" href="#">Delete task</a></button>
     </div>
         {% comment %} <span class="badge badge-primary badge-pill">Band score{{i.score}}</span> {% endcomment %}
