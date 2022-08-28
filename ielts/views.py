@@ -137,8 +137,15 @@ def part1sample(request, id ):
     
     
     
+# class UpdateTask1View(UpdateView):
+#     model = WritingTaskOne
+#     form_class = writingtask1Form
+#     context_object_name = 'post'
+#     template_name = 'tasks/task1/task1update.html'
 
     
+
+# part 2 section   
     
 def SpeakingPart2Questions(request):
     listtask = SpeakingPart2.objects.all
@@ -162,7 +169,7 @@ def part2sample(request, id ):
     return render(request, 'speaking/part2/sample.html', {"part2": part2,})
     
     
-    
+# part 3 section  
     
 def SpeakingPart3Topic(request):
     listtask = SpeakingPartThree.objects.all
