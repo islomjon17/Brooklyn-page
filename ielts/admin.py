@@ -23,6 +23,8 @@ admin.site.register(SpeakingPartThreeTopic)
 
 admin.site.register(SpeakingPartThree)
 
+admin.site.register(Vocabulary)
+
 
 
 

@@ -133,6 +133,29 @@ class SpeakingPartThree(models.Model):
     def get_absolute_url(self):
         return reverse('home')
     
+    
+    
+####### Vocabulary part
+
+
+TOPIC_CHOICES =(
+    ("noun", "noun"),
+    ("determiner", "determiner"),
+    ("pronoun", "pronoun"),
+    ("verb", "verb"),
+    ("adjective", "adjective"),
+    ("adverb", "adverb"),
+    ("preposition", "preposition"),
+    ("conjunction", "conjunction"),
+)
+class Vocabulary(models.Model):
+    word_type = models.CharField(max_length=100,
+        choices=TOPIC_CHOICES, default='noun'
+    )
+    word = models.CharField(max_length=100)
+    description = models.TextField()
+    example = models.TextField()
+
  
  
     
