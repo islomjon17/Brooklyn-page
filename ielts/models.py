@@ -157,8 +157,10 @@ class Vocabulary(models.Model):
     example = models.TextField()
     
     def __str__(self):
-        return self.word
+        return f'{self.word} ({self.word_type})'
 
+    def get_absolute_url(self):
+        return reverse('home')
  
  
     
