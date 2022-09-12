@@ -42,4 +42,7 @@ urlpatterns = [
      path('speakingpart3update/<int:pk>/',
          UpdateSpeakingPart3View.as_view(), name='speakingpart3update'),
 
+####Vocabulary section
+     path('vocabularyhome/', VocabularyHome, name='vocabularyhome' ),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

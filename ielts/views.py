@@ -213,3 +213,7 @@ class UpdateSpeakingPart3View(UpdateView):
     template_name = 'speaking/part3/updatespeaking.html'
 
   
+#Vocabulary section
+
+def VocabularyHome(request):
+    return render(request, 'vocabulary/vocabulary_page.html')
