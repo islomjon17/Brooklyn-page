@@ -44,5 +44,7 @@ urlpatterns = [
 
 ####Vocabulary section
      path('vocabularyhome/', VocabularyHome, name='vocabularyhome' ),
+     path('vocabularylist/', Vocabulary_list, name='vocabularylist' ),
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -217,3 +217,9 @@ class UpdateSpeakingPart3View(UpdateView):
 
 def VocabularyHome(request):
     return render(request, 'vocabulary/vocabulary_page.html')
+
+def Vocabulary_list(request ):
+    vocabulary_list = Vocabulary.objects.all().order_by('word')
+    return render(request, 'vocabulary/Vocabulary_list.html', {"vocabulary_list": vocabulary_list,})
+  
+  

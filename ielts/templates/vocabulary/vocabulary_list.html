@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<div class="list-group">
+   {% for i in vocabulary_list %}
+
+    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1"><i> <small> {{i.word }} <small/> <i/></h5>
+        <h6 class="text-muted"><i> {{i.word_type}} | {{i.level}} <i/></h6>
+      </div>
+      <p class="mb-1">{{i.description}}</p>
+      <small class="text-muted">{{i.example}}</small>
+    </a>
+
+    {% endfor %}
+
+{% endblock %}
