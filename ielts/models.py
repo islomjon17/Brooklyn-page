@@ -148,9 +148,18 @@ TOPIC_CHOICES =(
     ("preposition", "preposition"),
     ("conjunction", "conjunction"),
 )
+
+
+LEVEL =(
+    ("general", "general"),
+    ("academic", "academic"),
+)
 class Vocabulary(models.Model):
     word_type = models.CharField(max_length=100,
         choices=TOPIC_CHOICES, default='noun'
+    )
+    level = models.CharField(max_length=100,
+        choices=LEVEL, default='general'
     )
     word = models.CharField(max_length=100)
     description = models.TextField()
